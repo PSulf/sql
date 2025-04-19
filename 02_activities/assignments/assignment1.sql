@@ -127,6 +127,7 @@ When inserting the new vendor, you need to appropriately align the columns to be
 -> To insert the new row use VALUES, specifying the value you want for each column:
 VALUES(col1,col2,col3,col4,col5) 
 */
+
 DROP TABLE IF EXISTS new_vendor;
 
 CREATE TEMP TABLE new_vendor AS
@@ -134,8 +135,6 @@ SELECT * FROM vendor;
 
 INSERT INTO new_vendor
 VALUES (10, 'Thomass Superfood Store', 'Fresh Focused', 'Thomas Rosenthal', NULL);
-
-
 
 
 
