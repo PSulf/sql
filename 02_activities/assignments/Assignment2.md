@@ -32,6 +32,7 @@ Steps to complete this part of the assignment:
 - Write, within this markdown file, an answer to Prompt 3
 
 
+
 ###  Design a Logical Model
 
 #### Prompt 1
@@ -43,7 +44,12 @@ Additionally, include a date table.
 
 There are several tools online you can use, I'd recommend [Draw.io](https://www.drawio.com/) or [LucidChart](https://www.lucidchart.com/pages/).
 
+
+**HINT:** You do not need to create any data for this prompt. This is a logical model (ERD) only. 
+
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
+# Created base bookstore schema with core tables
+
 
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
@@ -57,7 +63,9 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 Your answer...
 ```
 
-***
+# The Type 1 architecture is where the CUSTOMER_ADDRESS simply overwrites old information when a customer's address changes. This saves storage space but loses historical data.
+
+# The Type 2 architecture is the model where the CUSTOMER_ADDRESS table retains historical address changes by creating new records with effective_date, end_date, and an is_current flag. This method preserves historical data, allowing us to know past addresses, but it requires more storage and slightly more complex queries (for example, finding the current address where is_current = TRUE or end_date IS NULL).
 
 ## Section 2:
 You can start this section following *session 4*.
